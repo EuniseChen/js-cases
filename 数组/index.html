@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 增加新的数字进去数组
+    //   var arr = [1,2,3]
+    //   arr = [1,2,3,4,5]
+    // console.log(arr);
+
+    // var arr =[]
+    // for (let i = 0; i < 10; i++) {
+    //   arr = [...arr,i+1]
+    // }
+    // console.log(arr);
+
+
+    // 新的数组只有大于10的数字
+// const arr = [2,0,6,1,77,0,52,0,25,7]
+// let arr1 = []
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] >= 10){
+//     arr1 = [...arr1,arr[i]]
+//   }
+// }
+// console.log(arr1);
+
+// 去除等于0的数字
+// const arr = [2,0,6,1,77,0,52,0,25,7]
+// let arr1 = []
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] !== 0){
+//     arr1=[...arr1,arr[i]]
+//   }
+// }
+// console.log(arr1);
+
+
+// 选出不是jin的其他名字
+// const people = ['Jack', 'Tom', 'Ivy', 'Jin', 'Jay']
+
+// const jin = people.filter(firstName => {
+//   if (firstName !== 'Jin') return firstName
+// })
+
+// console.log(jin);
+
+// 翻转数组
+// const arr = ['red', 'green', 'blue', 'pink', 'purple']
+// let newArr = []
+// for (let i = 0; i<5; i++){
+//   newArr[arr.length-1-i] = arr[i]
+// }
+// console.log(newArr);
+
+// 增加数组与删除数组 push 增加到前面，unshift增加到后面，pop删除后面第一个元素，shift删除前面第一个元素
+// const arr = [1,2,3,4]
+// arr.push(5,6)
+// arr.pop()
+// arr.unshift('e')
+// arr.shift()
+// console.log(arr);
+
+// 把超过2000的删除，把剩下的放到新数组
+const wageArr = [1500,1200,2000,2100,1800]
+const newWageArr = []
+for (let i = 0; i < wageArr.length; i++) {
+  if (wageArr[i] < 2000){
+    newWageArr.push(wageArr[i])
+  }
+}
+console.log(newWageArr);
+
+const array = ['c','a','z','a','x','a','x','c','b']
+const newArray = []
+for (let i = 0; i < array.length; i++) {
+if (newArray.indexOf(array[i]) === -1) {
+  newArray.push(array[i])
+}
+}
+console.log(newArray);
+
+  </script>
+</body>
+</html>

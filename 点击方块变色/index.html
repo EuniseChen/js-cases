@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  div {
+    width: 50px;
+    height: 50px;
+    border: 1px solid;
+  }
+</style>
+
+<body>
+  <!-- <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div> -->
+
+  <button>sum up</button>
+  <p>The result is :</p>
+
+  <script>
+    // const divs = document.querySelectorAll('div')
+    // divs.forEach(div =>
+    //   div.onclick = () => {
+    //     divs.forEach(div => {
+    //       div.style.backgroundColor = ''
+    //     })
+    //     div.style.backgroundColor = 'red'
+    //   }
+    // )
+
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    let btn = document.querySelector('button')
+    let text = document.querySelector('p')
+    let sum = 0
+    
+    arr.forEach(value => {
+      sum += value
+      return sum
+    }
+    )
+    btn.onclick = () => text.innerHTML = `The result is :${sum}`
+
+
+
+
+
+  </script>
+</body>
+
+</html>

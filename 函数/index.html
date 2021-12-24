@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    /*  function getSum (start, end) {
+       let sum = 0
+      for (let i = start; i <= end; i++) {
+           sum += i
+      }
+      return console.log(sum);
+    }
+
+
+    getSum(1,100) */
+
+    //
+
+    // 找出数组里面的最大数
+    // let a = getArrMax = (arr) => {
+    //   let max = arr[0]
+    //   for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i] > max) max = arr[i]
+    //   }
+    //   return max
+    // }
+
+    // let b = getArrMax([5,2,99,101,67,77])
+    // console.log(b);
+
+    // 用函数输出两个数字中最大的数字
+    // let num1 = parseInt(prompt('enter num1'))
+    // let num2 = parseInt(prompt('enter num2'))
+    // function getMax (num1,num2) {
+    //   if (num1 > num2){
+    //     return (num1)
+    //   }else {
+    //     return (num2)
+    //   }
+    // }
+
+    // alert(getMax(num1,num2))
+
+    // 用函数输出个数字中最大的数字
+    // let num1 = parseInt(prompt('enter num1'))
+    // let num2 = parseInt(prompt('enter num2'))
+    // let num3 = parseInt(prompt('enter num3'))
+    // function getMax(num1,num2,num3){
+    //   if (num1 > num2 && num1 > num3){
+    //     return num1
+    //   } else if (num2 > num1 && num2 > num3){
+    //     return num2
+    //   } else {
+    //     return num3
+    //   }
+    // }
+
+    // alert(getMax(num1,num2,num3))
+
+    // 用arguments来算出任意数字的最大
+    // function getMax (){
+    //   let max = arguments[0]
+    //   for (let i = 1; i < arguments.length; i++){
+    //     if (arguments[i] > max) {
+    //       max = arguments[i]
+    //     }
+    //   }
+    //   return max
+    // }
+
+    // console.log(getMax(4,87,100));
+    // console.log(getMax(5,70,1,120));
+    // console.log(getMax(1,2,5));
+
+    // 翻转数组
+    // function reverse(arr) {
+    //   let newArr = []
+    //   for (let i = 0; i < arr.length; i++) {
+    //     newArr[i] = arr[arr.length - i - 1]
+    //   }
+    //   return newArr
+    // }
+    // let array = reverse(['red', 'green', 'blue', 'pink', 'purple', 'black']);
+    // console.log(array);
+
+
+    //判断闰年
+    function backDay() {
+      let year = prompt('enter a year')
+      if (leapYear(year)) {
+        alert('There are 29 days in Feb')
+      } else {
+        alert('There are 28 days in Feb')
+      }
+    }
+    backDay()
+
+
+    function leapYear(year) {
+      let flag = false
+      if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+        flag = true
+      }
+      return flag
+    }
+    console.log(leapYear(2000));
+    console.log(leapYear(2010));
+  </script>
+</body>
+
+</html>

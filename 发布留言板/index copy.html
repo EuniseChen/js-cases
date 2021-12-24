@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  ul {
+    width: 200px;
+    height: 50px;
+  }
+
+  .remove {
+    margin-left: 80px;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <textarea name="" id="text" cols="40" rows="10"></textarea>
+    <button id="submit">submit</button>
+
+    <ul></ul>
+  </div>
+
+  <!-- 留言增加删除功能 -->
+  <script>
+    let text = document.querySelector('#text')
+    let submit = document.querySelector('#submit')
+    let ul = document.querySelector('ul')
+
+    submit.onclick = () => {
+      if (text.value === '') {
+        alert('type sth')
+        return false
+      } else {
+        let li = document.createElement('li')
+
+        li.innerHTML = text.value + '<button class="remove">remove</button>'
+        ul.insertBefore(li, ul.children[0])
+        text.value = ''
+
+        let removes = document.querySelectorAll('.remove')
+        
+        removes.forEach(remove => {
+          remove.onclick = () => {
+            ul.removeChild(remove.parentNode)
+          }
+        });
+
+      }
+    }
+
+
+
+  </script>
+</body>
+
+</html>

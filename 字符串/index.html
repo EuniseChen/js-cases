@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 字符串里面含o的位置与个数
+    // let str = 'abcoefoxyozzopp'
+    // let index = str.indexOf('o')
+    // let num = 0
+    // while (index !== -1) {
+    //   console.log(index);
+    //   index = str.indexOf('o', index + 1);
+    //   num++
+    // }
+    // console.log(num);
+
+    // 数组里面有red的位置和个数
+    // const arr = ['red', 'blue', 'red', 'green', 'pink', 'red']
+    // let index = arr.indexOf('red')
+    // let num = 0
+    // while (index !== -1) {
+    //   console.log(index);
+    //   index = arr.indexOf('red', index + 1)
+    //   num ++
+    // }
+    // console.log(num++);
+
+    // 字符串里面出现最多的字符，并统计次数
+    const str = 'abcoefoxyozzopp'
+    const object = []
+    let max = 0
+    let ch = ''
+
+    for (let i = 0; i < str.length; i++) {
+      let chars = str.charAt(i)
+      if (object[chars]){
+        object[chars] ++
+      }else {
+        object[chars]= 1
+      }
+    }
+
+    for (let k in object){
+      // console.log(k);
+      console.log(object[k]);
+      if (object[k] > max){
+        max = object[k]
+        ch = k
+      }
+    }
+    console.log(`出现最多的字符是${ch},出现了${max}次`);
+
+
+
+    let string = '1&2&3&4&5&6'
+    let a = string.split('&')
+    console.log(a);
+  </script>
+</body>
+
+</html>

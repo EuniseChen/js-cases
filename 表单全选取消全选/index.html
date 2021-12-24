@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  thead {
+    background-color: aqua;
+  }
+
+  tr {
+    border: 1px solid black;
+  }
+</style>
+
+<body>
+  <div class="wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <input type="checkbox" id="select-all">
+          </th>
+          <th>product</th>
+          <th>price</th>
+        </tr>
+      </thead>
+      <tbody id="all">
+        <tr>
+          <td>
+            <input type="checkbox">
+          </td>
+          <td>iphone13</td>
+          <td>10000</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox">
+          </td>
+          <td>samsung</td>
+          <td>8000</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox">
+          </td>
+          <td>Huawei</td>
+          <td>5000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    let selectAll = document.querySelector('#select-all')
+    let ticks = document.querySelector('#all').querySelectorAll('input')
+
+
+    selectAll.onclick = function () {
+      ticks.forEach(tick => {
+        tick.checked = this.checked
+      })
+    }
+
+    ticks.forEach(tick => {
+      tick.onclick = () => {
+        let flag = true
+        ticks.forEach(tick => {
+          if (!tick.checked) {
+            flag = false
+          }
+        })
+        selectAll.checked = flag
+      }
+    } )
+
+  </script>
+</body>
+
+</html>

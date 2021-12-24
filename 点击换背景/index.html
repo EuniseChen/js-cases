@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    background: url(https://cdn2.ettoday.net/images/4835/4835613.jpg) no-repeat;
+    background-size: cover;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bgi>img {
+    width: 200px;
+    height: 100px;
+  }
+</style>
+
+
+<body>
+  <ul class="container">
+    <li class="bgi"><img src="https://cdn2.ettoday.net/images/4835/4835613.jpg" alt=""></li>
+    <li class="bgi"><img src="https://tvax2.sinaimg.cn/large/0061BIWOly1ge00qox7htj31hc0u0alt.jpg" alt=""></li>
+    <li class="bgi"><img
+        src="https://lh3.googleusercontent.com/proxy/HyniZtMzxCyAzCbwHOLHTE4nez56usjLwByEb1EUilORWA9Fl7APn7x3OV-hKPHE17bcvwFGfe5_KbLycLdmhRb1Cat4dNH73xBpGXJqp_sIglmPwrxqy6df-5nh_t6iPg"
+        alt=""></li>
+    <li class="bgi"><img src="https://cdn2.ettoday.net/images/4835/4835615.jpg" alt=""></li>
+  </ul>
+
+  <script>
+    // let backGrounds = document.querySelectorAll('img')
+    // console.log(backGrounds);
+    // for (let i = 0; i < backGrounds.length; i++) {
+    //   backGrounds[i].onclick = function () {
+    //   let link = backGrounds[i].src
+    //   document.body.style.backgroundImage = `url(${link})`
+    //   // console.log(document.body.style.backgroundImage);
+    //  }
+    // }
+
+    let backGrounds = document.querySelectorAll('img')
+    backGrounds.forEach(backGround =>
+      backGround.onclick = () => {
+        let link = backGround.src
+        document.body.style.backgroundImage = `url(${link})`
+      }
+    )
+  </script>
+</body>
+
+</html>

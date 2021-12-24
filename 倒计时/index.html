@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let date = new Date()
+    let year = date.getFullYear()
+    let month = date.getMonth() + 1
+    let dates = date.getDate()
+    let day = date.getDay()
+    let arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+
+    console.log(`今天是${year}年${month}月${dates}日 ${arr[day]}`);
+
+    // 要求封装一个函数返回当前的时分秒 格式 08:08:08
+    function getTime() {
+      let hour = date.getHours()
+      console.log(hour);
+      hour = hour < 10 ? '0' + hour : hour  /*三元表达式*/
+      let minute = date.getMinutes()
+      minute = minute < 10 ? '0' + minute : minute
+      let second = date.getSeconds()
+      second = second < 10 ? '0' + second : second
+      return `${hour}:${minute}:${second}`
+    }
+    console.log(getTime())
+
+    // 倒计时
+    function countDown(time) {
+      let nowTime = + new Date()
+      let inputTime = + new Date(time)
+      let leftTime = (inputTime - nowTime) / 1000
+      let day = parseInt(leftTime / 60 / 60 / 24)
+      day = day < 10 ? '0' + day : day
+      let hour = parseInt(leftTime / 60 / 60 % 24)
+      hour = hour < 10 ? '0' + hour : hour
+      let minute = parseInt(leftTime / 60 % 60)
+      minute = minute < 10 ? '0' + minute : minute
+      let second = parseInt(leftTime % 60)
+      second = second < 10 ? '0' + second : second
+
+      return `${day}天${hour}时${minute}分${second}秒`
+    }
+
+    console.log(countDown(`2021/12/25 00:00:00`));
+    console.log('Merry Christmas in Australia');
+  </script>
+</body>
+
+</html>

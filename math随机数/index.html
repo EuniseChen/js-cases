@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function getRandom(min, max) {
+      // min = Math.ceil(min)
+      // max = Math.floor(max)
+      return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
+    let numRandom = getRandom(1, 10);
+    console.log(numRandom);
+    while(true){
+    let numEnter = prompt('please enter a number')
+    if (numEnter > numRandom){
+      alert('you guess big, please continue')
+    }else if (numEnter < numRandom){
+      alert('you guess small, please continue')
+    }else {
+      alert('congrats')
+      break
+    }
+  }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  img {
+    width: 50%;
+    height: 100%;
+  }
+</style>
+
+<body>
+  <img src="" alt="">
+  <p></p>
+
+  <script>
+    let img = document.querySelector('img')
+    let p = document.querySelector('p')
+    let date = new Date()
+    let hour = date.getHours()
+    console.log(hour)
+    if (hour < 12) {
+      img.src = "https://pic1.zhimg.com/v2-a85ddb0e39b99f4b7af092df26399bc0_1440w.jpg?source=172ae18b"
+      p.innerHTML = 'morning'
+    }else if (hour < 18) {
+      img.src = "https://i.pinimg.com/736x/6f/42/df/6f42df782ec9a042321905ea834c3e53.jpg"
+      p.innerHTML = 'afternoon'
+    }else {
+      img.src = "https://inews.gtimg.com/newsapp_bt/0/11909834010/641"
+      p.innerHTML = 'evening'
+    }
+  </script>
+</body>
+
+</html>

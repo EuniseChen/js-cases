@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  img {
+    width: 50%;
+    height: 100%;
+  }
+</style>
+
+<body>
+  <button id="andy">刘德华</button>
+  <button id="jackie">张学友</button>
+  <img src="http://image13.m1905.cn/mdb/uploadfile/2021/0218/thumb_1_300_410_20210218111140111244.jpg" alt="">
+
+  <script>
+    let andy = document.querySelector('#andy')
+    let jackie = document.querySelector('#jackie')
+    let img = document.querySelector('img')
+    andy.onclick = function(){
+      img.src = "http://image13.m1905.cn/mdb/uploadfile/2021/0218/thumb_1_300_410_20210218111140111244.jpg"
+    }
+
+    jackie.onclick = function () {
+      img.src = "https://lh3.googleusercontent.com/proxy/-opKSRwlkihpP7nb0lknE1MAyyFROXDPdjnCjE7z0qCuEgz8-Ayd6hlmWCOs7fWy5U4tyLExwNpGeIVGXocRrpNiLT0N"
+    }
+  </script>
+</body>
+
+</html>

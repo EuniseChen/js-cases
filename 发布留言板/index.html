@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <textarea name="" id="text" cols="40" rows="10"></textarea>
+    <button id="submit">submit</button>
+    <button id="remove">remove</button>
+    <ul></ul>
+  </div>
+
+  <!-- 留言逐个增加逐个删除 -->
+  <script>
+    let text = document.querySelector('#text')
+    let submit = document.querySelector('#submit')
+    let remove = document.querySelector('#remove')
+    let ul = document.querySelector('ul')
+
+    if (ul.children.length === 0) {
+      remove.disabled = true
+    } else {
+      remove.disabled = false
+    }
+
+    submit.onclick = () => {
+      if (text.value === '') {
+        alert('type sth')
+        return false
+      } else {
+        let li = document.createElement('li')
+        li.innerHTML = text.value
+        ul.insertBefore(li, ul.children[0])
+        text.value = ''
+        remove.disabled = false
+      }
+    }
+
+    remove.onclick = () => {
+      ul.removeChild(ul.children[0])
+      if ((ul.children.length) === 0) remove.disabled = true
+    }
+
+</script>
+</body >
+
+</html >
