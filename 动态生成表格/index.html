@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  table {
+    width: 500px;
+    text-align: center;
+    border: 1px solid;
+    background-color: cornsilk;
+  }
+</style>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Subject</th>
+        <th>Score</th>
+        <th>Operation</th>
+      </tr>
+
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <script>
+    const datas = [
+      {
+        name: 'Jack',
+        subject: 'css',
+        score: '90'
+      },
+      {
+        name: 'Jin',
+        subject: 'css',
+        score: '80'
+      },
+      {
+        name: 'Jin',
+        subject: 'css',
+        score: '95'
+      },
+      {
+        name: 'Jason',
+        subject: 'css',
+        score: '85'
+      }
+    ]
+
+    let tbody = document.querySelector('tbody')
+
+    datas.forEach((data, i) => {
+      let tr = document.createElement('tr')
+      tbody.appendChild(tr)
+
+      for (let k in datas[i]) {
+        let td = document.createElement('td')
+        tr.appendChild(td)
+        td.innerHTML = datas[i][k];
+      }
+
+      let td = document.createElement('td')
+
+      td.innerHTML = '<a href="javascript:;">delete</a>'
+      tr.appendChild(td)
+    })
+
+    let as = document.querySelectorAll('a')
+      as.forEach((a, i) => {
+        a.onclick = () => {
+          tbody.removeChild(a.parentNode.parentNode)
+        }
+      })
+  </script>
+</body>
+
+</html>
