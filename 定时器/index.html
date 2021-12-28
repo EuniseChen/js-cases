@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 100px;
+
+  }
+
+  div {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 10px;
+    font-size: 20px;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="hour">00</div>
+    <div class="minute">00</div>
+    <div class="second">00</div>
+  </div>
+
+  <script>
+    let h = document.querySelector('.hour')
+    let m = document.querySelector('.minute')
+    let s = document.querySelector('.second')
+    let date = new Date()
+    let inputTime = + new Date(`2022/01/12 09:08:00`)
+    countDown()
+    setInterval(countDown, 1000)
+    // 倒计时
+    function countDown() {
+
+
+      let nowTime = + new Date()
+      let leftTime = (inputTime - nowTime) / 1000
+      let hour = parseInt(leftTime / 60 / 60 % 24)
+      hour = hour < 10 ? '0' + hour : hour
+      h.innerHTML = hour
+      let minute = parseInt(leftTime / 60 % 60)
+      minute = minute < 10 ? '0' + minute : minute
+      m.innerHTML = minute
+      let second = parseInt(leftTime % 60)
+      second = second < 10 ? '0' + second : second
+      s.innerHTML = second
+    }
+
+
+  </script>
+</body>
+
+</html>

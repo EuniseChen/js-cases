@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text">
+  <button>send</button>
+
+  <script>
+    let btn = document.querySelector('button')
+    let timeLeft = 3
+
+    btn.addEventListener('click', function () {
+      btn.disabled = true
+      let timer = setInterval(function () {
+        if (timeLeft === 0) {
+          clearInterval(timer)
+          btn.disabled = false
+          btn.innerHTML = 'send'
+          timeLeft = 3
+        } else {
+          btn.innerHTML = `${timeLeft}s left`
+          timeLeft--
+        }
+      }, 1000)
+    })
+  </script>
+</body>
+
+</html>
