@@ -8,49 +8,47 @@
   <title>Document</title>
 </head>
 <style>
-* {
-  margin: 0;
-  padding: 0;
-}
+  * {
+    margin: 0;
+    padding: 0;
+  }
 
-#click {
-  cursor: pointer;
-}
+  #click {
+    cursor: pointer;
+  }
 
-.login-content {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
+  .login {
+    position: relative;
+    width: 300;
+    height: 200px;
+    opacity: 0;
+  }
 
-.login {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  opacity: 0;
-  animation-duration: .5s;
-  background-color: #fff;
-  width: 300px;
-  height: 200px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+  .login-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation-duration: .5s;
+    background-color: #fff;
+    width: 300px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+  }
 
-#close-btn {
-  position: absolute;
-  top: 40%;
-  right: 40%;
-  display: none;
-}
-
+  #close-btn {
+    position: absolute;
+    top: 40%;
+    right: 40%;
+    display: none;
+  }
 </style>
 
 <body>
   <div id="click">login</div>
-  <div class="login-content">
-    <div class="login">
+  <div class="login">
+    <div class="login-content">
       <h3>login</h3>
       username: <input type="text" placeholder="email or username">
       password: <input type="text" placeholder="length between 6-16">
@@ -63,23 +61,38 @@
     let click = document.querySelector('#click')
     let login = document.querySelector('.login')
     let closeBtn = document.querySelector('#close-btn')
+    let originX = login.offsetLeft
+    let originY = login.offsetTop
 
-    click.addEventListener('click', function(){
+    click.addEventListener('click', function () {
       login.style.opacity = '1'
       document.body.style.backgroundColor = 'grey'
       closeBtn.style.display = 'block'
+      login.style.left = originX + 'px'
+      login.style.top = originY + 'px'
     })
 
-    closeBtn.addEventListener('click', function(){
+    closeBtn.addEventListener('click', function () {
       login.style.opacity = '0'
       document.body.style.backgroundColor = 'white'
       closeBtn.style.display = 'none'
+
     })
 
-    login.addEventListener('mousedown',function(e){
-      let x = e.pageX - 
-      let y = e.pageY
+    login.addEventListener('mousedown', function (e) {
+      let x = e.pageX - login.offsetLeft
+      let y = e.pageY - login.offsetTop
 
+      document.addEventListener('mousemove', move)
+
+      function move (e) {
+        login.style.left = `${e.pageX - x}px`;
+        login.style.top = `${e.pageY - y}px`;
+      }
+
+      document.addEventListener('mouseup', function () {
+        document.removeEventListener('mousemove', move)
+      })
     })
 
   </script>
