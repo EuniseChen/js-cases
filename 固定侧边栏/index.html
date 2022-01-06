@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  header {
+    width: 80%;
+    height: 200px;
+    background-color: aqua;
+    margin-bottom: 20px;
+  }
+
+  .banner {
+    width: 80%;
+    height: 500px;
+    background-color: blueviolet;
+    margin-bottom: 20px;
+  }
+
+  .sidebar {
+    position: absolute;
+    top: 300px;
+    right: 200px;
+    width: 100px;
+    height: 300px;
+    background-color: darkblue;
+  }
+
+  span {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 50px;
+    background-color: darkcyan;
+  }
+  main {
+    width: 80%;
+    height: 1100px;
+    background-color: brown;
+    margin-bottom: 20px;
+  }
+
+  footer {
+    width: 80%;
+    height: 200px;
+    background-color: chocolate;
+    margin-bottom: 20px;
+  }
+</style>
+
+<body>
+  <header>header</header>
+  <div class="banner">banner</div>
+  <div class="sidebar">
+    <span>top</span>
+  </div>
+  <main>main</main>
+  <footer>footer</footer>
+
+  <script>
+    const sidebar = document.querySelector('.sidebar')
+    const banner = document.querySelector('.banner')
+    const backTop = document.querySelector('span')
+    const sidebarTop = sidebar.offsetTop - banner.offsetTop
+    const main = document.querySelector('main')
+
+    document.addEventListener('scroll', function(){
+      if (window.pageYOffset >= banner.offsetTop) {
+        sidebar.style.position = 'fixed'
+        sidebar.style.top = sidebarTop + 'px'
+        backTop.style.display = 'block'
+
+      }else {
+        sidebar.style.position = 'absolute'
+        sidebar.style.top = '300px'
+        backTop.style.display = 'none'
+      }
+    })
+    document.addEventListener('scroll', function(){
+      if (window.pageYOffset >= main.offsetTop) {
+        backTop.style.display = 'block'
+
+      }else {
+        backTop.style.display = 'none'
+      }
+    })
+  </script>
+</body>
+</html>
